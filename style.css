@@ -1,0 +1,251 @@
+/* General styling */
+body {
+  display: block;
+  background: linear-gradient(320deg, #eb92be, #ffef78, #219a81);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0; /* Remove default margin */
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+/* Navigation bar style */
+.navbar {
+  background-color: #333;
+  list-style-type: none;
+  justify-content: center;
+  padding: 0px;
+  position: sticky;
+  width:auto;
+  top: auto; /* Stick to the top of the viewport */
+  /*z-index: 100;  Ensure it's above other content */
+}
+
+/* Navigation links style */
+.navbar li {
+  padding-left: 25px;
+}
+
+.navbar a {
+  display: block;
+  color: #9c8ad7;
+  text-align: fixed;
+  text-decoration: none;
+  padding: 2px 0;
+  position: relative;
+  justify-content: center;
+  margin: 10px;
+  align-content: end;
+}
+
+/* Navigation link animation */
+.navbar a::before,
+.navbar a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: aliceblue;
+  transition: transform 0.37s ease-in;
+  transition: transform 0.17s ease-out;
+}
+
+.navbar a::before {
+  top: 0;
+  right: 0; /* Adjust position to right */
+  transform: scaleX(0);
+}
+
+.navbar a::after {
+  bottom: 0;
+  right: 0; /* Adjust position to right */
+  transform: scaleX(0);
+}
+
+.navbar a:hover::before,
+.navbar a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Dropdown button style */
+.dropbtn {
+  background-color: #333;
+  color: #9c8ad7;
+  border: aliceblue;
+  cursor: pointer;
+  padding: 14px 0;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: flex;
+  background-color: #85eac6;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(176, 92, 92, 0.2);
+  padding: 2px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: 0%;
+}
+
+/* Dropdown links style */
+.dropdown-content a {
+  color: #9c8ad7;
+  padding: 12px 0;
+}
+
+.dropdown-content a:hover {
+  background-color: #555;
+  color: rgb(68, 27, 126);
+}
+
+/* Specific styling for ul elements */
+ul {
+  display: flex;
+  background-color: rgb(75, 143, 120);
+  text-align: center;
+  justify-content: center;
+  overflow: clip;/*Achilles heel-
+  hidden will break dropbtn*/
+  padding: 0px;
+  margin: 0.0vh;/*temporary solution for nav
+  at top of page-not sticky*/
+  padding: 0;
+  margin: 0;
+}
+
+ul a {
+display: block;
+text-align: center;
+text-decoration: none;
+flex: 1;
+}
+
+ul a:hover {
+  background-color: rgb(198, 118, 118);
+  color: aliceblue;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+/*General styling for loginform*/
+.container {/*
+  position:absolute;
+  top:50%;
+  left: 50%;
+  transform:translate(-50%,-50%);*/
+  display: inline;
+  margin: auto;
+}  
+
+.login-form{
+  height: 310px;
+  width: 270px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0,0,0,1);
+  color: #2b1d5c;
+  padding-top: 60px;
+}
+.login h3{
+  letter-spacing: 1.32px;
+}
+.login {
+  text-align: center;
+  margin-top: -35px;
+}
+input {
+  width: 200px;
+  margin-top: 20px;
+  background: transparent;
+  outline: none;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 30px;
+  box-shadow: 0 0 4px #b91f1f;
+  transition: box-shadow .5s ease;
+}
+.btn{
+  padding: 5px 20px;
+  margin-top: 5px;
+  background: transparent;
+  border-radius: 40px;
+  box-shadow: 0 0 4px #4e0000;
+  cursor: pointer;
+}
+
+
+/*Changes text color on interact*/
+input[placeholder]:focus{
+  color:#ffffff;
+}
+
+
+input:focus, .btn:hover{
+  box-shadow: 0 0 10px #fff;
+}
+
+
+.remember {
+  display: flex;
+  align-items: center;
+}
+
+.custom-checkbox {
+  appearance: none;
+  width: 13.5px;
+  height: 13.5px;
+  border: 1.4px solid #333;
+  border-radius: 3px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+/*Border color*/
+.custom-checkbox:checked {
+  background-color: transparent;
+  border-color: #a41818;
+}
+
+/*Icon styling and position*/
+.custom-checkbox:checked::before {
+  content: "\2764";
+  justify-content: center;
+  display: block;
+  font-size: 11px;
+  color: #e12d2d;
+  text-align: start;
+  line-height: 5.4px;
+  margin-top: 3.2px;/*Change check icon pos*/
+  margin-left: 0px;
+}
+
+.label_rm {
+  margin-left: 0px;
+  padding: 12px;
+}
